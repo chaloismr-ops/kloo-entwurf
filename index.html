@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Start – Kamin- &amp; Ofentechnik Kloo (Konzeptentwurf)</title>
+<style>/* Prototyp Kamin- & Ofentechnik Kloo, Konzeptentwurf 16.11.2026
+   Farben aus dem Logo der bestehenden Seite (Logo-Rot gemessen ca. #a02020, gewählt #a32424; Kontrast auf Weiß 7,41:1),
+   Textfarbe #333 wie bestehende Seite (body color rgb(51,51,51)). Schrift: Systemschrift statt Libre Franklin
+   (die bestehende Seite lädt sie von Google-Servern; hier bewusst nichts Externes). */
+:root { --rot:#a32424; --rot-dunkel:#7e1a1a; --text:#333; --grau:#666; --hell:#f6f2ee; --linie:#ddd5cc; --weiss:#fff; }
+* { box-sizing:border-box; }
+body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color:var(--text); background:var(--weiss); font-size:17px; line-height:1.55; }
+a { color:var(--rot); }
+a[href^="tel:"], a[href^="mailto:"] { display:inline-block; padding:4px 0; min-height:28px; }
+.demo-banner { background:#fff3bf; border-bottom:1px solid #e0c96a; padding:8px 16px; font-size:14px; }
+.demo-banner.pruef { background:#dbeafe; border-color:#93c5fd; }
+.intern { background:#dbeafe; border-left:4px solid #3b82f6; padding:8px 12px; margin:12px 0; font-size:14px; }
+.ph { background:#fff176; padding:0 4px; border-radius:3px; }
+.leiste { background:var(--rot); color:#fff; font-size:15px; }
+.leiste .innen { display:flex; flex-wrap:wrap; gap:6px 18px; justify-content:flex-end; padding:8px 16px; max-width:1100px; margin:0 auto; }
+.leiste a { color:#fff; text-decoration:none; font-weight:600; }
+header.kopf { border-bottom:1px solid var(--linie); }
+header.kopf .innen { max-width:1100px; margin:0 auto; padding:14px 16px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px; }
+.marke { text-decoration:none; color:var(--text); }
+.marke strong { display:block; font-size:22px; color:var(--rot); letter-spacing:.02em; }
+.marke span { font-size:14px; color:var(--grau); }
+nav.haupt ul { list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:4px 16px; }
+nav.haupt a { text-decoration:none; color:var(--text); font-weight:600; font-size:15px; padding:6px 0; display:inline-block; }
+nav.haupt a.cta { background:var(--rot); color:#fff; padding:6px 14px; border-radius:6px; }
+main { max-width:1100px; margin:0 auto; padding:0 16px 40px; }
+.held { background:var(--hell); margin:0 -16px; padding:32px 16px; }
+.held .innen { max-width:1100px; margin:0 auto; }
+h1 { font-size:clamp(26px,5vw,38px); line-height:1.2; margin:0 0 10px; hyphens:auto; }
+h2 { font-size:clamp(21px,3.5vw,27px); margin:34px 0 12px; }
+h3 { font-size:19px; margin:0 0 6px; }
+.unterzeile { font-size:18px; max-width:720px; }
+.kacheln { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin-top:22px; }
+.kachel { display:block; background:#fff; border:2px solid var(--linie); border-radius:10px; padding:18px; text-decoration:none; color:var(--text); }
+.kachel:hover, .kachel:focus { border-color:var(--rot); }
+.kachel .los { color:var(--rot); font-weight:700; display:inline-block; margin-top:8px; }
+.warnung { background:#fdecea; border:2px solid var(--rot); border-radius:10px; padding:14px 16px; margin:18px 0; }
+.schritte { counter-reset:s; list-style:none; padding:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; }
+.schritte li { background:var(--hell); border-radius:10px; padding:14px 16px 14px 52px; position:relative; }
+.schritte li::before { counter-increment:s; content:counter(s); position:absolute; left:14px; top:14px; width:28px; height:28px; border-radius:50%; background:var(--rot); color:#fff; font-weight:700; text-align:center; line-height:28px; }
+.box { border:1px solid var(--linie); border-radius:10px; padding:16px; margin:14px 0; }
+.zweispaltig { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px; }
+.knopf { display:inline-block; background:var(--rot); color:#fff; border:0; border-radius:6px; padding:12px 20px; font-size:17px; font-weight:700; text-decoration:none; cursor:pointer; min-height:44px; }
+.knopf.zweit { background:#fff; color:var(--rot); border:2px solid var(--rot); }
+footer { background:#2b2b2b; color:#eee; padding:24px 16px; font-size:15px; }
+footer .innen { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; }
+footer a { color:#fff; }
+/* Formular */
+fieldset { border:1px solid var(--linie); border-radius:10px; padding:14px 16px; margin:16px 0; }
+legend { font-weight:700; padding:0 6px; }
+.wahl label { display:block; border:2px solid var(--linie); border-radius:8px; padding:10px 12px; margin:8px 0; cursor:pointer; }
+.wahl input { margin-right:8px; transform:scale(1.2); }
+.feld { margin:12px 0; }
+.feld > label { display:block; font-weight:600; margin-bottom:4px; }
+.feld input[type=text], .feld input[type=email], .feld input[type=tel], .feld select, .feld textarea { width:100%; font:inherit; padding:10px; border:1px solid #999; border-radius:6px; min-height:44px; }
+.feld .hilfe { font-size:15px; color:var(--grau); }
+.optionen label { display:block; margin:6px 0; font-weight:400; }
+.einwilligung { display:block; font-size:15px; }
+.fehler { color:var(--rot); font-weight:700; }
+.versteckt { display:none; }
+.zusammenfassung dt { font-weight:700; margin-top:8px; }
+.zusammenfassung dd { margin:0 0 4px; }
+</style>
+</head>
+<body>
+<div class="demo-banner" role="note">Konzeptentwurf, keine echte Seite. Gelbe Felder zeigen Angaben, die noch fehlen. Es wird nichts gesendet.</div>
+<div class="leiste"><div class="innen">
+  <a href="tel:+498035964677">☎ 08035 – 96 46 77</a>
+  <a href="tel:+491703276105">Mobil 0170 – 32 76 105</a>
+  <a href="mailto:info@kamin-ofentechnik.de">info@kamin-ofentechnik.de</a>
+</div></div>
+<header class="kopf"><div class="innen">
+  <a class="marke" href="index.html"><strong>Kamin- &amp; Ofentechnik</strong><span>Andreas Kloo · Meisterbetrieb · Raubling</span></a>
+  <nav class="haupt" aria-label="Hauptmenü"><ul>
+    <li><a href="index.html#neuer-ofen">Neuer Ofen</a></li>
+    <li><a href="index.html#reparatur">Reparatur &amp; Wartung</a></li>
+    <li><a href="index.html#fragen">Häufige Fragen</a></li>
+    <li><a href="index.html#ausbildung">Ausbildung</a></li>
+    <li><a href="index.html#kaminkehrer">Kaminkehrer</a></li>
+    <li><a class="cta" href="anfrage.html">Anfrage</a></li>
+  </ul></nav>
+</div></header>
+<main>
+<section class="held"><div class="innen">
+  <h1>Ihr Ofen in Meisterhand – vom Einbau bis zur Reparatur</h1>
+  <p class="unterzeile">Kaminöfen und Feuerstätten für feste Brennstoffe, Schornsteinsanierung und Abgasanlagen – alles aus einer Hand. Sagen Sie uns in zwei Minuten, worum es geht.</p>
+  <div class="kacheln">
+    <a class="kachel" href="anfrage.html?anliegen=neu"><h3>Neuer Ofen oder Austausch</h3>Sie möchten einen Kaminofen nachrüsten oder einen alten Ofen ersetzen.<br><span class="los">Anfrage mit Fotos →</span></a>
+    <a class="kachel" href="anfrage.html?anliegen=reparatur"><h3>Reparatur oder Störung</h3>Der Ofen zieht schlecht, die Scheibe verrußt, Tür oder Dichtung sind defekt.<br><span class="los">Störung melden →</span></a>
+    <a class="kachel" href="anfrage.html?anliegen=wartung"><h3>Wartung</h3>Ihr Ofen soll vor der Heizsaison durchgesehen werden.<br><span class="los">Wartung anfragen →</span></a>
+  </div>
+  <div class="warnung"><strong>Rauch oder Brandgeruch im Raum?</strong> Ofen nicht weiter benutzen, Fenster öffnen und sofort anrufen: <a href="tel:+491703276105">0170 – 32 76 105</a>. Bei Gefahr: Notruf 112.
+</div>
+</div></section>
+
+<section id="neuer-ofen">
+  <h2>Neuer Ofen: So läuft es ab</h2>
+  <ol class="schritte">
+    <li><strong>Anfrage mit Fotos.</strong> Sie zeigen uns Aufstellort und Schornsteinanschluss – oft spart das einen Termin nur zum Anschauen.</li>
+    <li><strong>Beratung vor Ort.</strong> Wir prüfen Raum, Schornstein und Ihre Wünsche zu Design und Funktion.</li>
+    <li><strong>Planung und Angebot.</strong> Sie erhalten ein Angebot mit Ofenvorschlag und Ablauf. <span class="ph">[Platzhalter: Was steht im Angebot, wie lange dauert es bis dahin?]</span></li>
+    <li><strong>Einbau.</strong> Wir bauen ein und erklären Ihnen den Ofen. <span class="ph">[Platzhalter: Abnahme der Feuerstätte: Ablauf und Zuständigkeit]</span></li>
+  </ol>
+  <p><a class="knopf" href="anfrage.html?anliegen=neu">Neuen Ofen anfragen</a></p>
+</section>
+
+<section id="reparatur">
+  <h2>Reparatur und Wartung</h2>
+  <div class="zweispaltig">
+    <div class="box"><h3>Reparatur</h3><p>Damit wir das richtige Ersatzteil mitbringen, helfen uns Hersteller, Modell und ein Foto vom Typenschild. Das Typenschild finden Sie meist <span class="ph">[Platzhalter: Ort des Typenschilds, z. B. hinter der Aschelade]</span>.</p><p><a class="knopf zweit" href="anfrage.html?anliegen=reparatur">Störung melden</a></p></div>
+    <div class="box"><h3>Wartung</h3><p>Eine regelmäßige Durchsicht hält Ihren Ofen sicher und sparsam. <span class="ph">[Platzhalter: Was gehört zur Wartung, wie oft empfohlen, Preisrahmen ja/nein]</span></p><p><a class="knopf zweit" href="anfrage.html?anliegen=wartung">Wartung anfragen</a></p></div>
+  </div>
+  <p>Wir reparieren und warten <span class="ph">[Platzhalter: auch Öfen, die nicht von uns eingebaut wurden? Welche Hersteller?]</span></p>
+</section>
+
+<section id="fragen">
+  <h2>Häufige Fragen</h2>
+  <div class="box"><h3>Muss mein alter Ofen ausgetauscht werden?</h3><p><span class="ph">[Platzhalter: Kurze Antwort zu Austausch- und Nachrüstpflichten für ältere Öfen, vom Meister formuliert]</span></p></div>
+  <div class="box"><h3>Was brauchen Sie von mir für ein Angebot?</h3><p>Fotos vom Aufstellort und vom Schornsteinanschluss, die ungefähre Raumgröße und Ihren Wunschzeitraum. Alles andere klären wir bei der Beratung vor Ort.</p></div>
+  <div class="box"><h3>Wann melden Sie sich nach meiner Anfrage?</h3><p>Sie bekommen sofort eine Eingangsbestätigung per Mail. Wir melden uns innerhalb von <span class="ph">[Platzhalter: ehrliche Rückmeldefrist]</span>.</p></div>
+</section>
+
+<section id="ausbildung">
+  <h2>Ausbildung bei uns</h2>
+  <div class="box"><p>Du arbeitest gern mit den Händen und willst ein Handwerk lernen, das jeden Winter gebraucht wird? Wir bilden aus als <span class="ph">[Platzhalter: Ausbildungsberuf, z. B. Ofen- und Luftheizungsbauer/in]</span>. Ein Praktikum ist <span class="ph">[Platzhalter: möglich ab …]</span>.</p>
+  <p>Bewerben geht ohne Anschreiben: Name, Kontakt, Schule und ein paar Sätze zu dir – fertig. <span class="ph">[Platzhalter: Kurzbewerbung als Formular (Textentwurf, nicht im Prototyp)]</span></p>
+</div>
+</section>
+
+<section id="kaminkehrer">
+  <h2>Sie suchen Ihren Kaminkehrer?</h2>
+  <div class="box"><p>Andreas Kloo ist bevollmächtigter Bezirksschornsteinfeger <span class="ph">[Platzhalter: für welche Gemeinden / Kehrbezirk]</span>. Für Termine rund um Kehren, Messen und Feuerstättenschau erreichen Sie ihn unter eigenen Kontaktdaten:</p>
+  <p>Tel. <a href="tel:+4980359088960">08035 / 90 88 960</a> · Mobil <a href="tel:+4915228032028">01522 / 80 32 028</a> · <a href="mailto:info@bkm-kloo.de">info@bkm-kloo.de</a></p>
+  <p><span class="ph">[Platzhalter: Vorabinfos: Termin verschieben, Abnahme neuer Feuerstätten]</span></p>
+</div>
+</section>
+</main>
+<footer><div class="innen">
+  <div><strong>Kamin- &amp; Ofentechnik</strong><br>Andreas Kloo, Meisterbetrieb<br>Siedlerstr. 12, 83064 Raubling</div>
+  <div>Tel. <a href="tel:+498035964677">08035 – 96 46 77</a><br>Mobil <a href="tel:+491703276105">0170 – 32 76 105</a><br><a href="mailto:info@kamin-ofentechnik.de">info@kamin-ofentechnik.de</a></div>
+  <div><a href="impressum.html">Impressum</a> (Entwurf)<br><a href="datenschutz.html">Datenschutz</a> (Entwurf)</div>
+</div><p style="margin:16px auto 0;max-width:1100px;font-size:14px;color:#ccc">Konzeptentwurf vom 16.11.2026 zur Ansicht für Kamin- &amp; Ofentechnik Kloo. Keine echte Seite, es wird nichts gesendet oder gespeichert. Bitte nicht veröffentlichen.</p></footer>
+<script>// Demo-Verhalten: nichts wird gesendet oder gespeichert (keine Netzwerk- oder Speicheraufrufe).
+(function () {
+  var form = document.getElementById('anfrage');
+  if (!form) return;
+  var weiter = {
+    neu: 'Wir sehen uns Ihre Fotos an und schlagen Ihnen einen Termin für die Beratung vor Ort vor.',
+    reparatur: 'Wir prüfen Ihre Angaben und melden uns mit einem Terminvorschlag und, wenn möglich, dem passenden Ersatzteil.',
+    wartung: 'Wir schlagen Ihnen einen Wartungstermin im gewünschten Zeitraum vor.'
+  };
+  function zeige(wert) {
+    form.querySelectorAll('.teil').forEach(function (f) {
+      var an = f.dataset.fuer === wert || (f.dataset.fuer === 'alle' && wert);
+      f.classList.toggle('versteckt', !an);
+    });
+    document.getElementById('hinweis-reparatur').classList.toggle('versteckt', wert !== 'reparatur');
+  }
+  form.querySelectorAll('input[name=anliegen]').forEach(function (r) {
+    r.addEventListener('change', function () { zeige(r.value); });
+  });
+  var start = new URLSearchParams(location.search).get('anliegen');
+  if (start && weiter[start]) {
+    var r = form.querySelector('input[name=anliegen][value=' + start + ']');
+    if (r) { r.checked = true; zeige(start); }
+  }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var fehler = [];
+    var anl = form.querySelector('input[name=anliegen]:checked');
+    if (!anl) fehler.push('Bitte wählen Sie, worum es geht.');
+    ['name', 'ort', 'mail'].forEach(function (id) {
+      if (!document.getElementById(id).value.trim()) fehler.push('Bitte füllen Sie „' + document.querySelector('label[for=' + id + ']').textContent.replace(' *', '') + '“ aus.');
+    });
+    var mail = document.getElementById('mail').value.trim();
+    if (mail && mail.indexOf('@') < 1) fehler.push('Bitte prüfen Sie die E-Mail-Adresse.');
+    if (!document.getElementById('einw').checked) fehler.push('Bitte bestätigen Sie die Einwilligung.');
+    var box = document.getElementById('fehler');
+    if (fehler.length) { box.textContent = fehler.join(' '); box.classList.remove('versteckt'); box.focus && box.focus(); return; }
+    box.classList.add('versteckt');
+    // Zusammenfassung nur aus sichtbaren, ausgefüllten Feldern
+    var liste = document.getElementById('b-liste');
+    liste.innerHTML = '';
+    function zeile(k, v) { var dt = document.createElement('dt'); dt.textContent = k; var dd = document.createElement('dd'); dd.textContent = v; liste.appendChild(dt); liste.appendChild(dd); }
+    zeile('Anliegen', anl.parentNode.textContent.trim());
+    var gesammelt = {};
+    form.querySelectorAll('fieldset.teil:not(.versteckt) input, fieldset.teil:not(.versteckt) select, fieldset.teil:not(.versteckt) textarea').forEach(function (el) {
+      if (!el.name || el.id === 'einw') return;
+      if ((el.type === 'radio' || el.type === 'checkbox') && !el.checked) return;
+      var v = (el.value || '').trim(); if (!v) return;
+      gesammelt[el.name] = gesammelt[el.name] ? gesammelt[el.name] + ', ' + v : v;
+    });
+    Object.keys(gesammelt).forEach(function (k) { if (k !== 'Name') zeile(k, gesammelt[k]); });
+    document.getElementById('b-name').textContent = document.getElementById('name').value.trim();
+    document.getElementById('b-weiter').textContent = weiter[anl.value];
+    document.getElementById('formularteil').classList.add('versteckt');
+    document.getElementById('bestaetigung').classList.remove('versteckt');
+    window.scrollTo(0, 0);
+  });
+})();
+</script>
+</body>
+</html>
